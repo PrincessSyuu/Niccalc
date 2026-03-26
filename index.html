@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="particles"></canvas>
+
+    <div class="splash" id="splash">
+        <div class="splash-logo">
+            <img src="tunas_bangsa.png" alt="NICCALC Logo" class="splash-img" />
+        </div>
+        <div class="splash-text">NICCALC</div>
+        <div class="splash-bar">
+            <div class="splash-bar-fill" id="splashBar"></div>
+        </div>
+    </div>
+
+    <div class="calculator hidden" id="calculator">
+        <div class="display">
+            <div class="previous" id="previous"></div>
+            <div class="current" id="current">0</div>
+        </div>
+        <div class="buttons" id="buttons">
+            <button class="btn operator" data-action="clear">AC</button>
+            <button class="btn operator" data-action="delete">DEL</button>
+            <button class="btn operator" data-action="percent">%</button>
+            <button class="btn operator" data-action="operator" data-value="/">/</button>
+            <button class="btn number" data-value="7">7</button>
+            <button class="btn number" data-value="8">8</button>
+            <button class="btn number" data-value="9">9</button>
+            <button class="btn operator" data-action="operator" data-value="*">*</button>
+            <button class="btn number" data-value="4">4</button>
+            <button class="btn number" data-value="5">5</button>
+            <button class="btn number" data-value="6">6</button>
+            <button class="btn operator" data-action="operator" data-value="-">-</button>
+            <button class="btn number" data-value="1">1</button>
+            <button class="btn number" data-value="2">2</button>
+            <button class="btn number" data-value="3">3</button>
+            <button class="btn operator" data-action="operator" data-value="+">+</button>
+            <button class="btn number zero" data-value="0">0</button>
+            <button class="btn number" data-value=".">.</button>
+            <button class="btn equals" data-action="equals">=</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Secret Notes</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="note-input">
+                    <textarea id="noteInput" placeholder="Write a secret note..." rows="3"></textarea>
+                    <button class="add-note-btn" id="addNote">Add Note</button>
+                </div>
+                <div class="notes-list" id="notesList"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="code-setup-overlay" id="codeSetupOverlay">
+        <div class="code-setup-modal">
+            <h2>Set Your Secret Code</h2>
+            <p>Enter a 4-digit number code to unlock your secret notes.</p>
+            <input type="password" id="codeSetupInput" maxlength="4" placeholder="Enter 4-digit code" />
+            <button class="setup-btn" id="saveCode">Save Code</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
